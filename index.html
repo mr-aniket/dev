@@ -259,6 +259,24 @@
                 }
             });
         });
+   // Prevent right-click
+   document.addEventListener('contextmenu', (e) => {
+       e.preventDefault();
+       return false;
+       });
+
+   // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+C
+   document.addEventListener('keydown', (e) => {
+    if (
+     e.key === 'F12' ||
+     (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+     (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+     (e.ctrlKey && e.key === 'u')
+    ) {
+     e.preventDefault();
+     return false;
+    }
+   });
   </script>
  </body>
 </html>
